@@ -7,4 +7,4 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     sex = models.CharField(max_length=10, null=True)
     province = models.CharField(max_length=30, null=True)
-    old = models.CharField(max_length=5, null=True)
+    age = models.CharField(max_length=5, null=True)
