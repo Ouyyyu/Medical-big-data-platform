@@ -37,19 +37,33 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'corsheaders',  # 跨域头部
+    'rest_framework',
     "user",
     "baike"
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # 配置跨域中间键
+    'django.middleware.common.CommonMiddleware',  # 注意顺序
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
+    # "django.middleware.common.CommonMiddleware",
+    # "django.middleware.csrf.CsrfViewMiddleware",  ##
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_WHITELIST = ("https://127.0.0.1:8080")  # 跨域白名单
+CORS_ORIGIN_REGEX_WHITELIST = [  # 配置ip白名单
+    'localhost:8080',
+    'localhost:8000',
+]
+CORS_ALLOW_METHODS = ("*")  # 配置允许的请求方式
+CORS_ALLOW_HEADERS = ("*")  # 配置允许的请求头
 
 ROOT_URLCONF = "backend.urls"
 

@@ -5,18 +5,18 @@ from django.shortcuts import render
 
 # login时读取url携带信息
 def information(request):
-    username = request.GET.get("username")
-    password = request.GET.get("password")
+    username = request.POST.get("username")
+    password = request.POST.get("password")
     return username, password
 
 
 # 注册功能
 def register(request):
-    username = request.GET.get("username")
-    sex = request.GET.get("sex")
-    password = request.GET.get("password")
-    province = request.GET.get("province")
-    age = request.GET.get("age")
+    username = request.POST.get("username")
+    sex = request.POST.get("sex")
+    password = request.POST.get("password")
+    province = request.POST.get("province")
+    age = request.POST.get("age")
     user = User.objects.filter(username=username).first()
     if user:
         return JsonResponse({'result': 0, 'message': '此用户名已注册过'}, json_dumps_params={"ensure_ascii": False})
@@ -31,12 +31,12 @@ def login(request):
     username, password = information(request)
     user = User.objects.filter(username=username).first()
     # 信息有误，直接返回
-    if not user:
-        return JsonResponse({'result': 0, 'message': '用户不存在'}, json_dumps_params={"ensure_ascii": False})
-    elif not user.check_password(password):
-        return JsonResponse({'result': 0, 'message': '密码错误'}, json_dumps_params={"ensure_ascii": False})
-    # if not user or not user.check_password(password):
-    #     return JsonResponse({'result': 0, 'message': '用户名或密码错误'}, json_dumps_params={"ensure_ascii": False})
+    # if not user:
+    #     return JsonResponse({'result': 0, 'message': '用户不存在'}, json_dumps_params={"ensure_ascii": False})
+    # elif not user.check_password(password):
+    #     return JsonResponse({'result': 0, 'message': '密码错误'}, json_dumps_params={"ensure_ascii": False})
+    if not user or not user.check_password(password):
+        return JsonResponse({'result': 0, 'message': '用户名或密码错误'}, json_dumps_params={"ensure_ascii": False})
     return JsonResponse({"result": 1, "massage": '登陆成功'}, json_dumps_params={"ensure_ascii": False})
 
 
