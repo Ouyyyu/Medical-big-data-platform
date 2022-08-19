@@ -1,13 +1,16 @@
 from django.http import JsonResponse
 from .models import User
+from django.shortcuts import render
 
 
+# login时读取url携带信息
 def information(request):
     username = request.GET.get("username")
     password = request.GET.get("password")
     return username, password
 
 
+# 注册功能
 def register(request):
     username = request.GET.get("username")
     sex = request.GET.get("sex")
@@ -23,15 +26,17 @@ def register(request):
     return JsonResponse({'result': 1, 'message': '注册成功'}, json_dumps_params={"ensure_ascii": False})
 
 
+# 登录功能
 def login(request):
     username, password = information(request)
     user = User.objects.filter(username=username).first()
-    # if not user:
-    #     return JsonResponse({"result": "用户不存在"}, json_dumps_params={"ensure_ascii": False})
-    # if not user.check_password(password):
-    #     return JsonResponse({"result": "密码错误"}, json_dumps_params={"ensure_ascii": False})
-    if not user and user.check_password(password):
-        return JsonResponse({'result': 0, 'message': '用户名或密码错误'}, json_dumps_params={"ensure_ascii": False})
+    # 信息有误，直接返回
+    if not user:
+        return JsonResponse({'result': 0, 'message': '用户不存在'}, json_dumps_params={"ensure_ascii": False})
+    elif not user.check_password(password):
+        return JsonResponse({'result': 0, 'message': '密码错误'}, json_dumps_params={"ensure_ascii": False})
+    # if not user or not user.check_password(password):
+    #     return JsonResponse({'result': 0, 'message': '用户名或密码错误'}, json_dumps_params={"ensure_ascii": False})
     return JsonResponse({"result": 1, "massage": '登陆成功'}, json_dumps_params={"ensure_ascii": False})
 
 
