@@ -15,8 +15,8 @@ def register(request):
     username = request.POST.get("username")
     sex = request.POST.get("sex")
     password = request.POST.get("password")
-    province = request.POST.get("province")
     age = request.POST.get("age")
+    province = request.POST.get("province")
     user = User.objects.filter(username=username).first()
     if user:
         return JsonResponse({'result': 0, 'message': '此用户名已注册过'}, json_dumps_params={"ensure_ascii": False})

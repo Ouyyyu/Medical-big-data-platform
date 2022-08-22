@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2481995b-1d38-4647-b8d4-5ae9f1c618cf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Medical-big-data-platform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Medical-big-data-platform.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/baike/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/baike/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +43,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Codes/PyCharmProjects/meiduo_mall&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Codes/PyCharmProjects/Medical-big-data-platform (2)&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -53,8 +56,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Codes\PyCharmProjects\Medical-big-data-platform\backend\static\disease.csv" />
-      <recent name="E:\Codes\PyCharmProjects\Medical-big-data-platform\backend\static" />
+      <recent name="E:\Codes\PyCharmProjects\Medical-big-data-platform (2)\backend\robot" />
+      <recent name="E:\Codes\PyCharmProjects\Medical-big-data-platform\backend\robot" />
+      <recent name="E:\Codes\PyCharmProjects\Medical-big-data-platform\backend" />
+      <recent name="E:\Codes\PyCharmProjects\Medical-big-data-platform\backend\robot\QAQ\dict" />
+      <recent name="E:\Codes\PyCharmProjects\Medical-big-data-platform\backend\robot\QAQ" />
     </key>
   </component>
   <component name="RunManager">
@@ -105,7 +111,7 @@
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="request.user" />
+        <watch expression="request.user" language="Python" />
       </configuration>
     </watches-manager>
   </component>

@@ -10,7 +10,7 @@ import pandas as pd
 
 # 获取url携带参数
 def information(request):
-    disease = request.GET.get("disease")
+    disease = request.POST.get("disease")
     return disease
 
 
@@ -21,15 +21,15 @@ def baike(request):
     # 若值为空，返回医疗百科分类页面
     if not disease:
         data_all = disease_all()
-        # return JsonResponse({'result': 1, 'data': data_all}, json_dumps_params={"ensure_ascii": False})
-        return JsonResponse({'result': 1, 'message': 'aaaaaa'}, json_dumps_params={"ensure_ascii": False})
+        return JsonResponse({'result': 1, 'data': data_all}, json_dumps_params={"ensure_ascii": False})
+        # return JsonResponse({'result': 1, 'data': 'aaaaaa'}, json_dumps_params={"ensure_ascii": False})
     # 若有值，返回此疾病详情
     elif disease:
         data_one = disease_one(disease)
         return JsonResponse({'result': 1, 'data': data_one}, json_dumps_params={"ensure_ascii": False})
     # 无效请求
     else:
-        return JsonResponse({'result': 0, 'message': '无效请求'}, json_dumps_params={"ensure_ascii": False})
+        return JsonResponse({'result': 0, 'data': '无效请求'}, json_dumps_params={"ensure_ascii": False})
 
 
 # 返回医疗百科分类页面
