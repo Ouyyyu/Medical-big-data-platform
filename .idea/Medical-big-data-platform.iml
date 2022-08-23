@@ -15,7 +15,6 @@
     <option name="namespacePackageFolders">
       <list>
         <option value="$MODULE_DIR$/backend/user" />
-        <option value="$MODULE_DIR$/backend/robot/QAQ" />
       </list>
     </option>
   </component>

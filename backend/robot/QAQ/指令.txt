@@ -1,7 +1,0 @@
-cd C:\neo4j-chs-community-4.0.0-windows
-
-cd bin
-
-neo4j.bat console
-
-python build_medicalgraph.py

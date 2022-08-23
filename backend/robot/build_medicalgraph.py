@@ -7,7 +7,7 @@ from py2neo import Graph, Node
 class MedicalGraph:
     def __init__(self):
         cur_dir = '/'.join(os.path.abspath(__file__).split('/')[:-1])
-        self.data_path = os.path.join(cur_dir, 'data/medical.json')
+        self.data_path = os.path.join(cur_dir, '../baike/data/medical.json')
         self.g = Graph('http://localhost:7474/', auth=("neo4j", "845880707"))
 
     ##读取文件
@@ -226,7 +226,9 @@ class MedicalGraph:
 
     ##导出数据
     def export_data(self):
-        Drugs, Foods, Checks, Departments, Producers, Symptoms, Diseases, disease_infos, rels_check, rels_recommandeat, rels_noteat, rels_doeat, rels_department, rels_commonddrug, rels_drug_producer, rels_recommanddrug, rels_symptom, rels_acompany, rels_category = self.read_nodes()
+        Drugs, Foods, Checks, Departments, Producers, Symptoms, Diseases, \
+        disease_infos, rels_check, rels_recommandeat, rels_noteat, rels_doeat, rels_department, rels_commonddrug, \
+        rels_drug_producer, rels_recommanddrug, rels_symptom, rels_acompany, rels_category = self.read_nodes()
         f_drug = open('drug.txt', 'w+')
         f_food = open('food.txt', 'w+')
         f_check = open('check.txt', 'w+')
