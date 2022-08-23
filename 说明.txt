@@ -1,0 +1,16 @@
+res_classify = self.classifier.classify(sent):
+res_classify->QuestionClassifier()（初始化）.classify(返回值)->check_medical(返回值)
+
+
+res_sql = self.parser.parser_main(res_classify)：
+QuestionPaser()
+
+
+
+final_answers = self.searcher.search_main(res_sql)
+
+
+
+
+
+check_medical->region_tree->build_actree
